@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="src/" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <h1>Lista de Tarefas</h1>
+      <!-- Campo para adicionar nova tarefa -->
+      <form class="todo-form" id="form_Tarefa">
+        <input type="hidden" id="form-id" />
+        <input type="text" placeholder="Título" id="titulo" />
+        <textarea
+          name="descricao"
+          id="descricao"
+          placeholder="Descrição"
+          rows="3"
+        ></textarea>
+        <button type="submit" id="btnAdd">Adicionar</button>
+      </form>
+      <!-- Lista onde as tarefas serão exibidas (da API ou adicionadas) -->
+      <ul class="todo-list" id="list-tarefas">
+         <!--backend-->
+      </ul>
+    </div>
+    <script type="module" src="src/scripts/modules/main.js"></script>
+  </body>
+</html>
