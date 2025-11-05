@@ -1,4 +1,5 @@
-
+ 🚀 app.js — Configuração principal do servidor Express
+// =======================================================
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
