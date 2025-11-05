@@ -6,6 +6,8 @@ import express from "express";
 import cors from "cors";
 import routes from "./routes/index.js";
 import bdconnect from "./config/dbconnect.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
@@ -25,12 +27,20 @@ app.set("json spaces", 2);
 })();
 
 // ===========================================
-// 🛣️ Rotas
+// 🌐 Servir arquivos estáticos (Front-end)
 // ===========================================
-routes(app);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// 🔹 Express entrega tudo que está dentro de /public
+app.use(express.static(path.join(__dirname, "../public")));
+
+// ===========================================
+// 🛣️ Rotas da API
+// ===========================================
+app.use("/api", routes);
 
 // ===========================================
 // ⚙️ Exporta o handler padrão do Express
 // ===========================================
-// ⬇️ Isso permite o funcionamento correto no Vercel
 export default (req, res) => app(req, res);
