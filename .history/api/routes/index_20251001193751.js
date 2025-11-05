@@ -1,4 +1,4 @@
-import routesTesk from "./taskRoutes.js";
+import routesTesk from "./taskRoutes";
 
 const routes = (app)=>{
     app.route('/').get((req, res)=>{
